@@ -1,0 +1,8 @@
+GNUmakefile
+.*/Rstem.Rcheck/.*
+.*/autom4te.cache/.*
+.*.aux
+.*.log
+.*/..Rcheck/.*
+.*~
+.*/.svn/.*
