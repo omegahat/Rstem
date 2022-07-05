@@ -1,4 +1,4 @@
-
+#if 0
 /* This file was generated automatically by the Snowball to ANSI C compiler */
 
 #include "../runtime/header.h"
@@ -1002,3 +1002,6 @@ extern struct SN_env * romanian_UTF_8_create_env(void) { return SN_create_env(0,
 
 extern void romanian_UTF_8_close_env(struct SN_env * z) { SN_close_env(z, 0); }
 
+#else
+static int NotUsed = 0;
+#endif
