@@ -29,6 +29,21 @@ StemLanguage *findLanguage(const char *langName);
 
 #define RSTEM_MAX_WORD_LENGTH 255
 
+
+
+
+#ifndef PROBLEM
+
+#define R_PROBLEM_BUFSIZE	4096
+#define PROBLEM			{char R_problem_buf[R_PROBLEM_BUFSIZE];(snprintf)(R_problem_buf, R_PROBLEM_BUFSIZE,
+#define ERROR			),Rf_error(R_problem_buf);}
+#define WARNING(x)		),Rf_warning(R_problem_buf);}
+#define WARN			WARNING(NULL)
+
+#endif
+
+
+
 /*
  Do the stemming.
 */
@@ -48,7 +63,7 @@ S_stemWords(SEXP words, SEXP lens, SEXP language)
 
   	    /* If the caller specified a language,  use that and do the appropriate lookups. */
         if(GET_LENGTH(language)) {
-		getLanguageRoutine(language, &create, &close, &stem);
+	    getLanguageRoutine(language, &create, &close, &stem);
 	}
 
         
@@ -56,8 +71,8 @@ S_stemWords(SEXP words, SEXP lens, SEXP language)
 	env =  (*create)();
 
         if(!env) {
-         PROBLEM "Cannot create a Snowball environment"
-	 ERROR;
+           PROBLEM "Cannot create a Snowball environment"
+   	   ERROR;
 	}
 
 
@@ -181,6 +196,8 @@ getLanguageRoutine(SEXP language, CreateEnvFun *create, CloseEnvFun *close, Stem
 }
 
 
+#ifdef COMPILE_TEST
+
 /* These two routines are here to provide an example of how to use the dynamic lookup
    to get the the create and close routines for the Snowball environment.
    See the example for the wordStem function in S.
@@ -203,6 +220,7 @@ testDynStem(SN_env *env)
 	return(english_stem(env));
 }
 
+#endif
 
 
 /*
