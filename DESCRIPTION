@@ -15,7 +15,7 @@ Description: An R interface to the C code that implements Porter's
   profiling, pool management, caching, etc.
 Author: Duncan Temple Lang <duncan@wald.ucdavis.edu>
 Maintainer: Duncan Temple Lang <duncan@wald.ucdavis.edu>
-Acknowledgements: The stemming code is taken directly from Dr Martin Porter's 
+Acknowledgments: The stemming code is taken directly from Dr Martin Porter's 
       distribution, available at
         http://snowball.tartarus.org
       and is generated via Snowball.
