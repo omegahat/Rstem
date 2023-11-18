@@ -58,7 +58,7 @@ See \url{http://snowball.tartarus.org/}
 
    # Simple example
    # "win"    "win"    "winner"
- wordStem(c("win", "winning", 'winner'))
+ wordStem(c("win", "winning", "winner"))
 
 
   # test the supplied vocabulary.
@@ -78,11 +78,13 @@ See \url{http://snowball.tartarus.org/}
  testOut = wordStem(testWords, "english")
  all(validate == testOut)
 
+\dontrun{
   # To illustrate using the dynamic lookup of symbols that allows one
   # to easily add new languages or create and close environment
   # routines (for example, to manage pools if this were an efficiency
   # issue!)
  testOut = wordStem(testWords, c("testDynCreate", "testDynClose", "testDynStem"))
+}
 }
 \keyword{IO}
 \keyword{utilities}
