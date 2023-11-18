@@ -55,6 +55,8 @@ StemLanguage languages[] = {
 {"swedish", &swedish_ISO_8859_1_create_env, &swedish_ISO_8859_1_close_env, &swedish_ISO_8859_1_stem},
 {"norwegian", &norwegian_ISO_8859_1_create_env, &norwegian_ISO_8859_1_close_env, &norwegian_ISO_8859_1_stem},
 {"danish", &danish_ISO_8859_1_create_env, &danish_ISO_8859_1_close_env, &danish_ISO_8859_1_stem},
+#if 0
 {"russian", &russian_ISO_8859_1_create_env, &russian_ISO_8859_1_close_env, &russian_ISO_8859_1_stem},
+#endif
 {"finnish", &finnish_ISO_8859_1_create_env, &finnish_ISO_8859_1_close_env, &finnish_ISO_8859_1_stem},
 };
